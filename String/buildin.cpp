@@ -6,7 +6,7 @@ int main() {
 
     string s = "Hello";
 
-    // length / size
+  
     cout << "Length: " << s.length() << endl;
     cout << "Size: " << s.size() << endl;
 
