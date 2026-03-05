@@ -12,5 +12,9 @@ int main() {
     s1.append(s2);
     cout << "Concatenated String using append(): " << s1 << endl;
 
+    // Concatenation using += operator
+    s1 += s2;
+    cout << "Concatenated String using += operator: " << s1 << endl;
+
     return 0;
 }
