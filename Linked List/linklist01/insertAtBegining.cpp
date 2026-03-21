@@ -9,6 +9,7 @@ public:
             this->next = NULL;
         }
 };
+
 class LinkedList{ //user defined data structure
 public:
     Node* head;
@@ -19,15 +20,17 @@ public:
         tail = NULL;
         size = 0;
     }
-    void insertAtEnd(int val){
+
+     void insertAtHead(int val){
         Node* temp = new Node(val);
         if(size == 0){
             head = temp;
             tail = temp;
         }
         else{
-            tail->next = temp;
-            tail = temp;
+           temp->next = head;
+           head =  temp;
+
         }
         size++;
     }
@@ -39,18 +42,16 @@ public:
         }
         cout<<endl;
     }
-
 };
-
 
 
 int main(){
     LinkedList ll;
-    ll.insertAtEnd(10);
+    ll.insertAtHead(10);
      ll.display();
-    ll.insertAtEnd(20);
+    ll.insertAtHead(20);
      ll.display();
-    ll.insertAtEnd(30);
+    ll.insertAtHead(30);
     ll.display();
     cout<<"Size of linked list is: "<<ll.size<<endl;
 
