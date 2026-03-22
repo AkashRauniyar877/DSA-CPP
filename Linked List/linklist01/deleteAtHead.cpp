@@ -87,13 +87,13 @@ public:
 };
 int main(){
     LinkedList ll;
-    ll .insertAtHead(10);
-    ll .insertAtHead(20);
-    ll .insertAtHead(30);
+    ll.insertAtHead(10);
+    ll.insertAtHead(20);
+    ll.insertAtHead(30);
     ll.insertAtHead(40);
     ll.insertAtHead(50);
     ll.insertAtHead(60);
-     ll.display();
+    ll.display();
     ll.display();
     cout<<"Size of linked list is: "<<ll.size<<endl;
     ll.deleteAtHead();
