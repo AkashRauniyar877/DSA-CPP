@@ -36,7 +36,6 @@ bool isValidBST(Node* root){
 
 }
 int main(){
-    // Creating BST manually
     Node* root = new Node(10);
     root->left = new Node(5);
     root->right = new Node(15);
@@ -49,9 +48,7 @@ int main(){
     displayTree(root);
     cout << endl;
 
-  
    if(isValidBST(root)) cout<<"The tree is a valid BST";
    else cout<<"The tree is not a valid BST";
 
-    return 0;
 }
