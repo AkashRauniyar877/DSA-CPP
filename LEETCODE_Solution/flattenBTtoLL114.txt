@@ -13,6 +13,7 @@ public:
         }
         return ans;
     }
+    
     void flatten(TreeNode* root){
         vector<TreeNode*> ans = preorder(root);
         int n = ans.size();
