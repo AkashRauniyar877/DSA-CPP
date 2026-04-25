@@ -1,0 +1,25 @@
+class Solution {
+public:
+    void count(unordered_map<int,int> &m,int n){
+        while(n>0){
+            int r = n%10;
+            m[r]++;
+            n /= 10;
+        }
+    }
+    int countDigitOccurrences(vector<int>& nums, int digit) {
+        int n = nums.size();
+        unordered_map<int,int>m;
+        for(int i=0;i<n;i++){
+            count(m,nums[i]);
+        }
+        int c = 0;
+        for(auto a : m){
+            if(a.first == digit) {
+                c = a.second;
+                break;
+            }
+        }
+        return c;
+    }
+};
