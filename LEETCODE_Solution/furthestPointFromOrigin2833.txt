@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int furthestDistanceFromOrigin(string moves) {
+        int n = moves.size();
+        int l =0;
+        int r = 0;
+        int sa = 0;
+        for(char s : moves){
+            if(s == 'L') l++;
+           else if(s == 'R') r++;
+            else sa++;
+        }
+        if(l==r) return sa;
+        return sa + abs(l-r);
+        
+    }
+};
