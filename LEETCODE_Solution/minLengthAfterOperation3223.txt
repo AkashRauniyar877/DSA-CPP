@@ -1,0 +1,25 @@
+class Solution {
+public:
+    int minimumLength(string s) {
+        if(s.length()<3) return s.size();
+        unordered_map<char,int>m;
+        for(char ch : s){
+            m[ch]++;
+        }
+        for(auto x :m){
+            char ch = x.first;
+            int a = x.second;
+            if(a % 2 == 0){
+                m[ch] = 2;
+            } else {
+                m[ch] = 1;
+            }
+        }
+        int sum = 0;
+        for(auto x : m){
+            sum +=x.second;
+        }
+        return sum;
+        
+    }
+};
