@@ -1,0 +1,13 @@
+class Solution {
+public:
+    int reverseDegree(string s) {
+        int n = s.size();
+        int z = 0;
+        int sum = 0;
+        for(int i=0;i<n;i++){
+            z = s[i]-'a';
+            sum += (26-z)*(i+1);
+        }
+        return sum;
+    }
+};
