@@ -1,0 +1,21 @@
+class Solution {
+public:
+    vector<int> findErrorNums(vector<int>& nums) {
+        int n = nums.size();
+        vector<int>ans;
+        sort(nums.begin(),nums.end());
+        int req = (n*(n+1))/2;
+        int ava = 0;
+        int rep = 0;
+        for(int i = 0;i<n-1;i++){
+            if(nums[i]==nums[i+1]) rep = nums[i];
+            ava += nums[i];
+        }
+        ava = ava+ nums[n-1];
+        int missing = req - ava + rep; 
+
+        ans.push_back(rep);
+        ans.push_back(missing);
+        return ans;
+    }
+};
