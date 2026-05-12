@@ -46,5 +46,6 @@ public:
             cout << temp->val << " ";
             temp = temp->next;
         }
+        
         return 0;
     }
