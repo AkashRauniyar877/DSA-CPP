@@ -35,6 +35,7 @@ bool isValidBST(Node* root){
     return isValidBST(root->left) && isValidBST(root->right);
 
 }
+
 int main(){
     Node* root = new Node(10);
     root->left = new Node(5);
