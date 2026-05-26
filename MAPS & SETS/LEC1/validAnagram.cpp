@@ -1,0 +1,59 @@
+#include<iostream>
+#include<unordered_map>
+using namespace std;
+bool validAnagram(string s, string t){
+     unordered_map<char,int>m1;
+    unordered_map<char,int>m2;
+    for(int i=0;i<s.length();i++){
+        m1[s[i]]++;
+    }
+    for(int i=0;i<t.length();i++){
+        m2[t[i]]++;
+    }
+    for (auto x : m1){
+        char ch1 = x.first;
+        int freq = x.second;
+        if(m2.find(ch1)!=m2.end()){
+            int freq2 = m2[ch1];
+            if(freq!=freq2){
+                return false;
+            }
+        }
+        else return false;
+        
+    }
+    return true;
+}
+
+
+// another approach using one hashmap
+bool validAnagram(string s,string t){
+    if(s.size()!=t.size()) return false;
+    unordered_map<char,int>m1;
+    for(int i=0;i<s.length();i++){
+        m1[s[i]]++;
+    }
+
+     for(int i=0;i<t.length();i++){
+      char ch = t[i];
+      if(m1.find(ch)!=m1.end()){
+        m1[ch]--;
+        if(m1[ch]==0) m1.erase(ch);
+      }
+      else return false;
+    }
+    if(m1.size()>0) return false;
+    return true;
+
+}
+
+int main(){
+    string s = "anagram";
+    string t = "nagaram";
+    if(validAnagram(s,t)){
+        cout<<"True"<<endl;
+    }
+    else cout<<"False"<<endl;
+   
+
+}
