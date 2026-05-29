@@ -1,0 +1,27 @@
+class Solution {
+  public:
+    Node* reverseList(Node* head) {
+        Node* t = head;
+        stack<int>st;
+        while(t!=NULL){
+            st.push(t->data);
+            t = t->next;
+        }
+        Node* a = NULL;
+        Node* tail = NULL;
+        while(!st.empty()){
+            int val = st.top();
+            st.pop();
+           Node* temp = new Node(val);
+            if(a== NULL){
+               a = temp;
+                tail = temp;
+            } else {
+                tail->next = temp;
+                tail = temp;
+            }
+        }
+        return a;
+        
+    }
+};
