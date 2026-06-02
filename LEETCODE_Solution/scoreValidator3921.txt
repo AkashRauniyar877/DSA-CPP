@@ -12,6 +12,7 @@ public:
             }
             if(counter == 10) break;
         }
+        
         return {score,counter};
     }
 };
