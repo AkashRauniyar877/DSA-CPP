@@ -10,7 +10,6 @@ public:
             else{
                 score += stoi(events[i]);
             }
-
             if(counter == 10) break;
         }
         return {score,counter};
