@@ -11,7 +11,6 @@ public:
         for(auto x : freq){
             sum += x.first*x.second;
         }
-        
         return sum;
     }
 };
